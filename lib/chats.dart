@@ -9,14 +9,17 @@ class Chats extends StatefulWidget{
 class ChatsState extends State<Chats>{
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView.builder(
-        itemCount: 5,
-          itemBuilder: (context,index)=>_chatMessages()
-      ),
+    return Column(
+      children: <Widget>[
+        _chatMessage(),
+        _chatMessage(),
+        _chatMessage(),
+        _chatMessage(),
+      ],
     );
   }
-  Widget _chatMessages(){
+
+  Widget _chatMessage(){
     return new ListTile(
       leading:new CircleAvatar(backgroundImage: NetworkImage("https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png"),),
       title: new Text('Name',style: new TextStyle(fontWeight: FontWeight.w500),),

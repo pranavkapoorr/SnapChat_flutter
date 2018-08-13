@@ -18,25 +18,25 @@ class Pager extends StatelessWidget {
 
   _contentWidget(Color color, [Widget page]) {
     var widgets = <Widget>[];
-    widgets.add(new Opacity(
-      opacity: 0.0,
-      child: new Container(
-        color: color,
-      ),
-    ));
     if (page != null) {
       widgets.add(new Positioned.fill(
-        child: new Container(
-          margin: new EdgeInsets.fromLTRB(0.0, 80.0, 0.0, 0.0),
-          child: page,
-          decoration: new ShapeDecoration(
-              color: Colors.white,
-              shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.only(
-                      topLeft: new Radius.circular(10.0),
-                      topRight: new Radius.circular(10.0)
-                  )
-              )
+        child: Container(
+          child: ListView(
+            children: <Widget>[
+              new Container(
+                margin: new EdgeInsets.fromLTRB(0.0, 80.0, 0.0, 0.0),
+                child: page,
+                decoration: new ShapeDecoration(
+                    color: Colors.white,
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.only(
+                            topLeft: new Radius.circular(10.0),
+                            topRight: new Radius.circular(10.0)
+                        )
+                    )
+                ),
+              ),
+            ],
           ),
         ),
       ));
