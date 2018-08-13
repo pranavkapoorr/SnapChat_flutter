@@ -52,7 +52,7 @@ class StoryTilesState extends State<StoryTiles> {
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 10,
-              itemBuilder: ((context,index) => _makeTile(140.0,90.0,"https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png","Subscription")),
+              itemBuilder: ((context,index) => _makeTile(140.0,100.0,"https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png","Subscription")),
             ),
           ),
           ]
