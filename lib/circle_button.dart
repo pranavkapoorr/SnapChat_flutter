@@ -46,7 +46,7 @@ class ControlsLayer extends StatelessWidget {
                 )
               ],
             ),
-            hintText: "Search",
+            hintText: offset>0?"Discover":"Search",
             hintStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18.0),
             suffixIcon: IconButton(icon: _addChatIcon(), onPressed: (){print("add chat");}),
             border: InputBorder.none
