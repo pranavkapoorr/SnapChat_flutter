@@ -15,6 +15,10 @@ class ChatsState extends State<Chats>{
         _chatMessage(),
         _chatMessage(),
         _chatMessage(),
+        _chatMessage(),
+        _chatMessage(),
+        _chatMessage(),
+        _chatMessage(),
       ],
     );
   }
