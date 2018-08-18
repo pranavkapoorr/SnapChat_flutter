@@ -38,7 +38,7 @@ class ControlsLayer extends StatelessWidget {
             prefixIcon: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                IconButton(icon: CircleAvatar(backgroundImage: NetworkImage("https://d2x5ku95bkycr3.cloudfront.net/App_Themes/Common/images/profile/0_200.png"),maxRadius: 15.0,),
+                IconButton(icon: Image.network("https://weloveweather.tv/wp-content/themes/weloveweather/img/icon-profile-default.png",color: Colors.white,scale: 5.5,),
                     onPressed: (){print("user profile");}),
                 Padding(
                   padding: const EdgeInsetsDirectional.only(start: 8.0),
@@ -46,9 +46,17 @@ class ControlsLayer extends StatelessWidget {
                 )
               ],
             ),
-            hintText: offset>0.5?"Discover":"Search",
-            hintStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 18.0),
-            suffixIcon: offset>0.5?IconButton(icon: _addChatIcon(), onPressed: (){print("add chat");}):IconButton(icon:Icon(Icons.party_mode,color:Colors.white),onPressed: onCameraTap,),
+            hintText: offset>0.5?" Friends":offset<-0.5?" Discover":" Search",
+            hintStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 20.0),
+            suffixIcon: offset>0.5?IconButton(icon: _addChatIcon(), onPressed: (){print("add chat");})
+                :offset<-0.5?Text("")
+                :Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    IconButton(icon:Icon(Icons.flash_off,color:Colors.white),onPressed: (){print('flash');},),
+                    IconButton(icon:Icon(Icons.party_mode,color:Colors.white),onPressed: onCameraTap,),
+                  ],
+                ),
             border: InputBorder.none
           ),
         )

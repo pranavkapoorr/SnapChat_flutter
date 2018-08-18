@@ -22,7 +22,7 @@ class StoryTilesState extends State<StoryTiles> {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Text("Friends",style: TextStyle(color: Colors.purple, fontSize: 18.0,fontWeight: FontWeight.w500),),
+                    Text("Friends",style: TextStyle(color: Colors.purple, fontSize: 17.0,fontWeight: FontWeight.w700),),
                   ],
                 ),
                 Container(
@@ -44,7 +44,7 @@ class StoryTilesState extends State<StoryTiles> {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Text("Subscriptions",style: TextStyle(color: Colors.purple, fontSize: 18.0,fontWeight: FontWeight.w500),),
+                    Text("Subscriptions",style: TextStyle(color: Colors.purple, fontSize: 17.0,fontWeight: FontWeight.w700),),
                   ],
                 ),
           Container(
@@ -67,7 +67,7 @@ class StoryTilesState extends State<StoryTiles> {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Text("For You",style: TextStyle(color: Colors.purple, fontSize: 18.0,fontWeight: FontWeight.w500),),
+                    Text("For You",style: TextStyle(color: Colors.purple, fontSize: 17.0,fontWeight: FontWeight.w700),),
                   ],
                 ),
                 _newsTiles(20)

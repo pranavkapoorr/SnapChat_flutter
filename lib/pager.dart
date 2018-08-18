@@ -21,22 +21,44 @@ class Pager extends StatelessWidget {
     if (page != null) {
       widgets.add(new Positioned.fill(
         child: Container(
-          child: ListView(
-            children: <Widget>[
-              new Container(
-                margin: new EdgeInsets.fromLTRB(0.0, 80.0, 0.0, 0.0),
-                child: page,
-                decoration: new ShapeDecoration(
-                    color: Colors.white,
-                    shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.only(
-                            topLeft: new Radius.circular(10.0),
-                            topRight: new Radius.circular(10.0)
-                        )
-                    )
+          child: DefaultTabController(
+            length: 3,
+            child: ListView(
+              children: <Widget>[
+                page==leftWidget?Padding(
+                  padding: const EdgeInsets.fromLTRB(68.0,30.0,68.0,0.0),
+                  child: TabBar(
+                    labelColor: Colors.white,
+                    unselectedLabelColor: Colors.white,
+                    indicatorColor: Colors.white,
+                    tabs: <Widget>[
+                      Tab(child: Text("Add",style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w700),)),
+                      Tab(child: Text("Groups",style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w700),)),
+                      Tab(child: Text("Chat",style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w700),))
+
+                    ],
+                  ),
+                ):Text(""),
+                ListView(
+                  shrinkWrap: true,
+                  children: <Widget>[
+                    new Container(
+                      margin: new EdgeInsets.fromLTRB(0.0, page==leftWidget?1.0:45.0, 0.0, 0.0),
+                      child: page,
+                      decoration: new ShapeDecoration(
+                          color: Colors.white,
+                          shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.only(
+                                  topLeft: new Radius.circular(10.0),
+                                  topRight: new Radius.circular(10.0)
+                              )
+                          )
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ));

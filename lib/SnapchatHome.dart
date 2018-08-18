@@ -25,7 +25,7 @@ class _SnapchatState extends State<Snapchat> {
     if (notification.depth == 0 && notification is ScrollUpdateNotification) {
       setState(() {
         offsetFromOne = 1.0 - pagerController.page;
-        offsetRatio = offsetFromOne.abs();
+        offsetRatio = offsetFromOne;
       });
     }
     return false;
@@ -42,7 +42,7 @@ class _SnapchatState extends State<Snapchat> {
                 children: <Widget>[
                   new CameraHome(),
                   new Shade(
-                    opacity: offsetRatio,
+                    opacity: offsetRatio.abs(),
                     isLeft: offsetFromOne > 0,
                   ),
 

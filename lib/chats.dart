@@ -6,7 +6,13 @@ class Chats extends StatefulWidget{
  ChatsState createState() => ChatsState();
 
 }
-class ChatsState extends State<Chats>{
+class ChatsState extends State<Chats> with TickerProviderStateMixin{
+  TabController controller;
+  @override
+  void initState() {
+    super.initState();
+    controller = TabController(length: 3, vsync: this);
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,5 +43,10 @@ class ChatsState extends State<Chats>{
         ),
       ),
     );
+  }
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 }
