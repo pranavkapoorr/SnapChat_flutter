@@ -20,13 +20,13 @@ class Pager extends StatelessWidget {
     var widgets = <Widget>[];
     if (page != null) {
       widgets.add(new Positioned.fill(
-        child: Container(
-          child: DefaultTabController(
-            length: 3,
+        child: DefaultTabController(
+          length: 3,
+          child: Container(
             child: ListView(
               children: <Widget>[
                 page==leftWidget?Padding(
-                  padding: const EdgeInsets.fromLTRB(68.0,30.0,68.0,0.0),
+                  padding: const EdgeInsets.fromLTRB(66.0,30.0,66.0,0.0),
                   child: TabBar(
                     labelColor: Colors.white,
                     unselectedLabelColor: Colors.white,
@@ -43,7 +43,7 @@ class Pager extends StatelessWidget {
                   shrinkWrap: true,
                   children: <Widget>[
                     new Container(
-                      margin: new EdgeInsets.fromLTRB(0.0, page==leftWidget?1.0:45.0, 0.0, 0.0),
+                      margin: new EdgeInsets.fromLTRB(0.0, page==leftWidget?1.0:35.0, 0.0, 0.0),
                       child: page,
                       decoration: new ShapeDecoration(
                           color: Colors.white,
@@ -61,6 +61,11 @@ class Pager extends StatelessWidget {
             ),
           ),
         ),
+      ));
+    }else{
+      widgets.add(Padding(
+        padding: const EdgeInsets.fromLTRB(0.0,65.0,0.0,0.0),
+        child: Divider(color: Colors.white,),
       ));
     }
 

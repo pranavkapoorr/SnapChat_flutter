@@ -25,6 +25,7 @@ class ChatsState extends State<Chats> with TickerProviderStateMixin{
         _chatMessage(),
         _chatMessage(),
         _chatMessage(),
+        _chatMessage(),
       ],
     );
   }

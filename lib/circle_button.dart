@@ -29,7 +29,7 @@ class ControlsLayer extends StatelessWidget {
   }
   Widget _appBarPanel() {
     return new Positioned(
-      top: 15.0,
+      top: 20.0,
       right: 0.0,
       left: 0.0,
       child:
